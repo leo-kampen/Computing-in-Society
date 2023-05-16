@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Automation in Industries</title>
+	<style>
+		body {
+			background-color: lightblue;
+			font-family: Arial, sans-serif;
+		}
+		h1 {
+			text-align: center;
+			color: black;
+			margin-top: 50px;
+		}.sidebar {
+		height: 200px;
+		width: 150px;
+		position: fixed;
+		top: 0;
+		left: 100;
+		padding-top: 40px;
+		background-color: lightblue;
+		}
+
+		.sidebar div {
+		padding: 8px;
+		font-size: 24px;
+		display: block;
+		}
+
+		.body-text {
+		margin-left: 150px;
+		font-size: 18px;
+		}
+		.content {
+			float: right;
+			width: 70%;
+			height: 750px;
+			margin-top: 50px;
+			padding: 20px;
+			background-color: lightblue;
+			color: black;
+		}
+		nav ul {
+			list-style-type: none;
+			padding: 0;
+		}
+		nav li {
+			margin-bottom: 10px;
+		}
+		nav a {
+			text-decoration: none;
+			color: black;
+			font-weight: bold;
+		}
+		nav a:hover {
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Automation in Industries</h1>
+	</header>
+	<div class="sidebar">
+		<nav>
+			<ul>
+				<li><a href="file:///Users/leokampen/Downloads/Homepage.html">Home</a></li>
+				<li><a href="file:///Users/leokampen/Downloads/history.html">History</a></li>
+				<li><a href="file:///Users/leokampen/Downloads/impacts.html">Impacts</a></li>
+				<li><a href="file:///Users/leokampen/Downloads/Benefits.html">Benefits</a></li>
+				<li><a href="file:///Users/leokampen/Downloads/Drawbacks.html">Drawbacks</a></li>
+				<li><a href="file:///Users/leokampen/Downloads/Strategies.html">Strategies</a></li>
+				<li><a href="file:///Users/leokampen/Downloads/Search.html">Search</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="content">
+
+
+
+		<h2 id="Search">Search</h2>
+		<p>This will be the search.</p>
+
+
+		<div class="content">
+
+
+		<form id="form"> 
+	  <input type="search" id="query" name="q" placeholder="Search...">
+	  <button>Search</button>
+	</form>
+	<h2 id="searchResults">Search Results</h2>
+	<div id="searchContent"></div>
+
+	<script>
+	  // Assuming you have a function to fetch and display search results
+	function displaySearchResults(query) {
+	  // Fetch search results and store them in an array or variable
+	  var searchResults = fetchSearchResults(query);
+
+	  // Get a reference to the searchContent div
+	  var searchContent = document.getElementById("searchContent");
+
+	  // Clear the previous search results
+	  searchContent.innerHTML = "";
+
+	  // Loop through the search results and create elements for each result
+	  for (var i = 0; i < searchResults.length; i++) {
+	    var result = document.createElement("p");
+	    result.textContent = searchResults[i];
+
+	    // Append each result to the searchContent div
+	    searchContent.appendChild(result);
+	  }
+
+	  // Adjust the height of the searchContent div based on the number of results
+	  searchContent.style.height = searchResults.length * 20 + "px";
+	}
+
+	// Example function to fetch search results (replace with your own implementation)
+	function fetchSearchResults(query) {
+	  // Perform search query and return an array of results
+	  // Example:
+	  return ["Result 1", "Result 2", "Result 3", "Result 4", "Result 5"];
+	}
+
+	  // Event listener for the search form submission
+	  document.getElementById("form").addEventListener("submit", function (event) {
+	    event.preventDefault(); // Prevent form submission
+	    var query = document.getElementById("query").value;
+	    displaySearchResults(query);
+	  });
+	</script>
+
+
+	<footer>
+		<!--<p>&copy; 2023 Automation and Job Loss</p>-->
+	</footer>
+
+	<script>
+	// Function to handle the search
+	function search() {
+		var query = document.getElementById("query").value; // Get the search query from the input field
+		var searchContent = document.getElementById("searchContent"); // Get the div where the search results will be displayed
+
+		// Clear previous search results
+		searchContent.innerHTML = "";
+
+		// Perform your search logic here (example using static data)
+		// You can replace this with your own search logic or fetch data from an API
+		var data = [
+			
+			
+			{ title: "Recreational Therapists", content: "The probability that this occupation will be automated is 0.28%." },
+			{ title: "First-Line Supervisors of Mechanics, Installers, and Repairers", content: "The probability that this occupation will be automated is 0.3%." },
+			{ title: "Emergency Management Directors", content: "The probability that this occupation will be automated is 0.3%." },
+			{ title: "Mental Health and Substance Abuse Social Workers", content: "The probability that this occupation will be automated is 0.31%." },
+			{ title: "Audiologists", content: "The probability that this occupation will be automated is 0.33%." },
+			{ title: "Occupational Therapists", content: "The probability that this occupation will be automated is 0.35%." },
+			{ title: "Orthotists and Prosthetists", content: "The probability that this occupation will be automated is 0.35%." },
+			{ title: "Healthcare Social Workers", content: "The probability that this occupation will be automated is 0.35%." },
+			{ title: "Oral and Maxillofacial Surgeons", content: "The probability that this occupation will be automated is 0.36%." },
+			{ title: "First-Line Supervisors of Fire Fighting and Prevention Workers", content: "The probability that this occupation will be automated is 0.36%." },
+			{ title: "Dietitians and Nutritionists", content: "The probability that this occupation will be automated is 0.39%." },
+			{ title: "Lodging Managers", content: "The probability that this occupation will be automated is 0.39%." },
+			{ title: "Choreographers", content: "The probability that this occupation will be automated is 0.4%." },
+			{ title: "Sales Engineers", content: "The probability that this occupation will be automated is 0.41%." },
+			{ title: "Physicians and Surgeons", content: "The probability that this occupation will be automated is 0.42%." },
+			{ title: "Instructional Coordinators", content: "The probability that this occupation will be automated is 0.42%." },
+			{ title: "Psychologists, All Other", content: "The probability that this occupation will be automated is 0.43%." },
+			{ title: "First-Line Supervisors of Police and Detectives", content: "The probability that this occupation will be automated is 0.44%." },
+			{ title: "Dentists, General", content: "The probability that this occupation will be automated is 0.44%." },
+			{ title: "Elementary School Teachers, Except Special Education", content: "The probability that this occupation will be automated is 0.44%." },
+			{ title: "Medical Scientists, Except Epidemiologists", content: "The probability that this occupation will be automated is 0.45%." },
+			{ title: "Education Administrators, Elementary and Secondary School", content: "The probability that this occupation will be automated is 0.46%." },
+			{ title: "Podiatrists", content: "The probability that this occupation will be automated is 0.46%." },
+			{ title: "Clinical, Counseling, and School Psychologists", content: "The probability that this occupation will be automated is 0.47%." },
+			{ title: "Mental Health Counselors", content: "The probability that this occupation will be automated is 0.48%." },
+			{ title: "Fabric and Apparel Patternmakers", content: "The probability that this occupation will be automated is 0.49%." },
+			{ title: "Set and Exhibit Designers", content: "The probability that this occupation will be automated is 0.55%." },
+			{ title: "Human Resources Managers", content: "The probability that this occupation will be automated is 0.55%." },
+			{ title: "Recreation Workers", content: "The probability that this occupation will be automated is 0.61%." },
+			{ title: "Training and Development Managers", content: "The probability that this occupation will be automated is 0.63%." },
+			{ title: "Speech-Language Pathologists", content: "The probability that this occupation will be automated is 0.64%." },
+			{ title: "Computer Systems Analysts", content: "The probability that this occupation will be automated is 0.65%." },
+			{ title: "Social and Community Service Managers", content: "The probability that this occupation will be automated is 0.67%." },
+			{ title: "Curators", content: "The probability that this occupation will be automated is 0.68%." },
+			{ title: "Athletic Trainers", content: "The probability that this occupation will be automated is 0.71%." },
+			{ title: "Medical and Health Services Managers", content: "The probability that this occupation will be automated is 0.73%." },
+			{ title: "Preschool Teachers, Except Special Education", content: "The probability that this occupation will be automated is 0.74%." },
+			{ title: "Farm and Home Management Advisors", content: "The probability that this occupation will be automated is 0.75%." },
+			{ title: "Anthropologists and Archeologists", content: "The probability that this occupation will be automated is 0.77%." },
+			{ title: "Special Education Teachers, Secondary School", content: "The probability that this occupation will be automated is 0.77%." },
+			{ title: "Secondary School Teachers, Except Special and Career/Technical Education", content: "The probability that this occupation will be automated is 0.78%." },
+			{ title: "Clergy", content: "The probability that this occupation will be automated is 0.81%." },
+			{ title: "Foresters", content: "The probability that this occupation will be automated is 0.81%." },
+			{ title: "Educational, Guidance, School, and Vocational Counselors", content: "The probability that this occupation will be automated is 0.85%." },
+			{ title: "Career/Technical Education Teachers, Secondary School", content: "The probability that this occupation will be automated is 0.88%." },
+			{ title: "Registered Nurses", content: "The probability that this occupation will be automated is 0.9%." },
+			{ title: "Rehabilitation Counselors", content: "The probability that this occupation will be automated is 0.94%." },
+			{ title: "Teachers and Instructors, All Other", content: "The probability that this occupation will be automated is 0.95%." },
+			{ title: "Forensic Science Technicians", content: "The probability that this occupation will be automated is 0.95%." },
+			{ title: "Makeup Artists, Theatrical and Performance", content: "The probability that this occupation will be automated is 1%." },
+			{ title: "Marine Engineers and Naval Architects", content: "The probability that this occupation will be automated is 1%." },
+			{ title: "Education Administrators, Postsecondary", content: "The probability that this occupation will be automated is 1%." },
+			{ title: "Mechanical Engineers", content: "The probability that this occupation will be automated is 1.1%." },
+			{ title: "Pharmacists", content: "The probability that this occupation will be automated is 1.2%." },
+			{ title: "Logisticians", content: "The probability that this occupation will be automated is 1.2%." },
+			{ title: "Microbiologists", content: "The probability that this occupation will be automated is 1.2%." },
+			{ title: "Industrial-Organizational Psychologists", content: "The probability that this occupation will be automated is 1.2%." },
+			{ title: "Coaches and Scouts", content: "The probability that this occupation will be automated is 1.3%." },
+			{ title: "Sales Managers", content: "The probability that this occupation will be automated is 1.3%." },
+			{ title: "Hydrologists", content: "The probability that this occupation will be automated is 1.4%." },
+			{ title: "Marketing Managers", content: "The probability that this occupation will be automated is 1.4%." },
+			{ title: "Marriage and Family Therapists", content: "The probability that this occupation will be automated is 1.4%." },
+			{ title: "Engineers, All Other", content: "The probability that this occupation will be automated is 1.4%." },
+			{ title: "Training and Development Specialists", content: "The probability that this occupation will be automated is 1.4%." },
+			{ title: "First-LineSupervisors of Office and Administrative Support Workers", content: "The probability that this occupation will be automated is 1.5%." },
+			{ title: "Biological Scientists, All Other", content: "The probability that this occupation will be automated is 1.5%." },
+			{ title: "Public Relations and Fundraising Managers", content: "The probability that this occupation will be automated is 1.5%." },
+			{ title: "Multimedia Artists and Animators", content: "The probability that this occupation will be automated is 1.5%." },
+			{ title: "Computer and Information Research Scientists", content: "The probability that this occupation will be automated is 1.5%." },
+			{ title: "Chief Executives", content: "The probability that this occupation will be automated is 1.5%." },
+			{ title: "Education Administrators, Preschool and Childcare Center/Program", content: "The probability that this occupation will be automated is 1.5%." },
+			{ title: "Music Directors and Composers", content: "The probability that this occupation will be automated is 1.6%." },
+			{ title: "First-Line Supervisors of Production and Operating Workers", content: "The probability that this occupation will be automated is 1.6%." },
+			{ title: "Securities, Commodities, and Financial Services Sales Agents", content: "The probability that this occupation will be automated is 1.6%." },
+			{ title: "Conservation Scientists", content: "The probability that this occupation will be automated is 1.6%." },
+			{ title: "Special Education Teachers, Middle School", content: "The probability that this occupation will be automated is 1.7%." },
+			{ title: "Chemical Engineers", content: "The probability that this occupation will be automated is 1.7%." },
+			{ title: "Architectural and Engineering Managers", content: "The probability that this occupation will be automated is 1.7%." },
+			{ title: "Aerospace Engineers", content: "The probability that this occupation will be automated is 1.8%." },
+			{ title: "Natural Sciences Managers", content: "The probability that this occupation will be automated is 1.8%." },
+			{ title: "Environmental Engineers", content: "The probability that this occupation will be automated is 1.8%." },
+			{ title: "Architects, Except Landscape and Naval", content: "The probability that this occupation will be automated is 1.8%." },
+			{ title: "Physical Therapist Assistants", content: "The probability that this occupation will be automated is 1.9%." },
+			{ title: "Civil Engineers", content: "The probability that this occupation will be automated is 2%." },
+			{ title: "Health Diagnosing and Treating Practitioners, All Other", content: "The probability that this occupation will be automated is 2.1%." },
+			{ title: "Soil and Plant Scientists", content: "The probability that this occupation will be automated is 2.1%." },
+			{ title: "Materials Scientists", content: "The probability that this occupation will be automated is 2.1%." },
+
+		  { title: "Materials Engineers", content: "The probability that this occupation will be automated is 2.1%." },
+		  { title: "Fashion Designers", content: "The probability that this occupation will be automated is 2.1%." },
+		  { title: "Physical Therapists", content: "The probability that this occupation will be automated is 2.1%." },
+		  { title: "Photographers", content: "The probability that this occupation will be automated is 2.1%." },
+		  { title: "Producers and Directors", content: "The probability that this occupation will be automated is 2.2%." },
+		  { title: "Interior Designers", content: "The probability that this occupation will be automated is 2.2%." },
+		  { title: "Orthodontists", content: "The probability that this occupation will be automated is 2.3%." },
+		  { title: "Art Directors", content: "The probability that this occupation will be automated is 2.3%." },
+		  { title: "First-Line Supervisors of Correctional Officers", content: "The probability that this occupation will be automated is 2.5%." },
+		  { title: "Directors, Religious Activities and Education", content: "The probability that this occupation will be automated is 2.5%." },
+		  { title: "Electronics Engineers, Except Computer", content: "The probability that this occupation will be automated is 2.5%." },
+		  { title: "Biochemists and Biophysicists", content: "The probability that this occupation will be automated is 2.7%." },
+		  { title: "Chiropractors", content: "The probability that this occupation will be automated is 2.7%." },
+		  { title: "Occupational Therapy Assistants", content: "The probability that this occupation will be automated is 2.8%." },
+		  { title: "Child, Family, and School Social Workers", content: "The probability that this occupation will be automated is 2.8%." },
+		  { title: "Health and Safety Engineers, Except Mining Safety Engineers and Inspectors", content: "The probability that this occupation will be automated is 2.8%." },
+		  { title: "Industrial Engineers", content: "The probability that this occupation will be automated is 2.9%." },
+		  { title: "First-Line Supervisors of Transportation and Material-Moving Machine and Vehicle Operators", content: "The probability that this occupation will be automated is 2.9%." },
+		  { title: "Veterinary Technologists and Technicians", content: "The probability that this occupation will be automated is 2.9%." },
+		  { title: "Industrial Production Managers", content: "The probability that this occupation will be automated is 3.0%." },
+		  { title: "Industrial Engineering Technicians", content: "The probability that this occupation will be automated is 3.0%." },
+		  { title: "Network and Computer Systems Administrators", content: "The probability that this occupation will be automated is 3.0%." },
+		  { title: "Database Administrators", content: "The probability that this occupation will be automated is 3.0%." },
+		  { title: "Purchasing Managers", content: "The probability that this occupation will be automated is 3.0%." },
+		  { title: "Postsecondary Teachers", content: "The probability that this occupation will be automated is 3.2%."},
+		  { title: "Environmental Scientists and Specialists, Including Health", content: "The probability that this occupation will be automated is 3.2%." },
+		  { title: "Substance Abuse and Behavioral Disorder Counselors", content: "The probability that this occupation will be automated is 3.3%." },
+		  { title: "Lawyers", content: "The probability that this occupation will be automated is 3.3%." },
+		  { title: "Craft Artists", content: "The probability that this occupation will be automated is 3.5%." },
+		  { title: "Operations Research Analysts", content: "The probability that this occupation will be automated is 3.5%." },
+		  { title: "Computer and Information Systems Managers", content: "The probability that this occupation will be automated is 3.5%." },
+		  { title: "Commercial and Industrial Designers", content: "The probability that this occupation will be automated is 3.5%." },
+		  { title: "Biomedical Engineers", content: "The probability that this occupation will be automated is 3.7%." },
+		  { title: "Meeting, Convention, and Event Planners", content: "The probability that this occupation will be automated is 3.7%." },
+		  { title: "Veterinarians", content: "The probability that this occupation will be automated is 3.7%." },
+		  { title: "Writers and Authors", content: "The probability that this occupation will be automated is 3.8%." },
+		  { title: "Advertising and Promotions Managers", content: "The probability that this occupation will be automated is 3.8%." },
+		  { title: "Political Scientists", content: "The probability that this occupation will be automated is 3.9%." },
+		  { title: "Credit Counselors", content: "The probability that this occupation will be automated is 3.9%." },
+		  { title: "Social Scientists and Related Workers, All Other", content: "The probability that this occupation will be automated is 4.0%." },
+		  { title: "Astronomers", content: "The probability that this occupation will be automated is 4.0%." },
+		  { title: "Ship Engineers", content: "The probability that this occupation will be automated is 4.1%." },
+		  { title: "Software Developers, Applications", content: "The probability that this occupation will be automated is 4.1%." },
+		  { title: "Fine Artists, Including Painters, Sculptors, and Illustrators", content: "The probability that this occupation will be automated is 4.2%." },
+		  { title: "Psychiatric Technicians", content: "The probability that this occupation will be automated is 4.2%." },
+		  { title: "Landscape Architects", content: "The probability that this occupation will be automated is 4.3%." },
+		  { title: "Health Educators", content: "The probability that this occupation will be automated is 4.5%." },
+				  
+		  { title: "Mathematicians", content: "The probability that this occupation will be automated is 4.7%." },
+		  { title: "Floral Designers", content: "The probability that this occupation will be automated is 4.7%." },
+		  { title: "Farmers, Ranchers, and Other Agricultural Managers", content: "The probability that this occupation will be automated is 4.7%." },
+		  { title: "Forest Fire Inspectors and Prevention Specialists", content: "The probability that this occupation will be automated is 4.8%." },
+		  { title: "Emergency Medical Technicians and Paramedics", content: "The probability that this occupation will be automated is 4.9%." },
+		  { title: "Editors", content: "The probability that this occupation will be automated is 5.5%." },
+		  { title: "Prosthodontists", content: "The probability that this occupation will be automated is 5.5%." },
+		  { title: "Healthcare Practitioners and Technical Workers, All Other", content: "The probability that this occupation will be automated is 5.5%." },
+		  { title: "Travel Guides", content: "The probability that this occupation will be automated is 5.7%." },
+		  { title: "Licensed Practical and Licensed Vocational Nurses", content: "The probability that this occupation will be automated is 5.8%." },
+		  { title: "Sociologists", content: "The probability that this occupation will be automated is 5.9%." },
+		  { title: "Arbitrators, Mediators, and Conciliators", content: "The probability that this occupation will be automated is 6.0%." },
+		  { title: "Animal Scientists", content: "The probability that this occupation will be automated is 6.1%." },
+		  { title: "Residential Advisors", content: "The probability that this occupation will be automated is 6.4%." },
+		  { title: "Aircraft Cargo Handling Supervisors", content: "The probability that this occupation will be automated is 6.6%." },
+		  { title: "Respiratory Therapists", content: "The probability that this occupation will be automated is 6.6%." },
+		  { title: "Broadcast News Analysts", content: "The probability that this occupation will be automated is 6.7%." },
+		  { title: "Financial Managers", content: "The probability that this occupation will be automated is 6.9%." },
+		  { title: "Nuclear Engineers", content: "The probability that this occupation will be automated is 7.0%." },
+		  { title: "Construction Managers", content: "The probability that this occupation will be automated is 7.1%." },
+		  { title: "Musicians and Singers", content: "The probability that this occupation will be automated is 7.4%." },
+		  { title: "First-Line Supervisors of Non-Retail Sales Workers", content: "The probability that this occupation will be automated is 7.5%." },
+		  { title: "First-Line Supervisors of Personal Service Workers", content: "The probability that this occupation will be automated is 7.6%." },
+		  { title: "Food Scientists and Technologists", content: "The probability that this occupation will be automated is 7.7%." },
+		  { title: "Compliance Officers", content: "The probability that this occupation will be automated is 8.0%." },
+		  { title: "Fish and Game Wardens", content: "The probability that this occupation will be automated is 8.0%." },
+		  { title: "Graphic Designers", content: "The probability that this occupation will be automated is 8.2%." },
+		  { title: "Food Service Managers", content: "The probability that this occupation will be automated is 8.3%." },
+		  { title: "Childcare Workers", content: "The probability that this occupation will be automated is 8.4%." },
+		  { title: "Fitness Trainers and Aerobics Instructors", content: "The probability that this occupation will be automated is 8.5%." },
+		  { title: "Gaming Managers", content: "The probability that this occupation will be automated is 9.1%." },
+		  { title: "Electrical Power-Line Installers and Repairers", content: "The probability that this occupation will be automated is 9.7%." },
+		  { title: "Police and Sheriff’s Patrol Officers", content: "The probability that this occupation will be automated is 9.8%." },
+		  { title: "Travel Agents", content: "The probability that this occupation will be automated is 9.9%." },
+		  { title: "Chefs and Head Cooks", content: "The probability that this occupation will be automated is 10.0%." },
+		  { title: "Animal Trainers", content: "The probability that this occupation will be automated is 10.0%." },
+		  { title: "Radio and Television Announcers", content: "The probability that this occupation will be automated is 10.0%." },
+		  { title: "Electrical Engineers", content: "The probability that this occupation will be automated is 10.0%." },
+		  { title: "Chemists", content: "The probability that this occupation will be automated is 10.0%." },
+		  { title: "Respiratory Therapy Technicians", content: "The probability that this occupation will be automated is 10.0%." },
+		  { title: "Physicists", content: "The probability that this occupation will be automated is 10.0%." },
+		  { title: "Hairdressers, Hairstylists, and Cosmetologists", content: "The probability that this occupation will be automated is 10.0%." },
+		  { title: "Reporters and Correspondents", content: "The probability that this occupation will be automated is 11.0%." },
+		  { title: "Air Traffic Controllers", content: "The probability that this occupation will be automated is 11.0%." },
+		  { title: "Dancers", content: "The probability that this occupation will be automated is 11.0%." },
+		  { title: "Nuclear Medicine Technologists", content: "The probability that this occupation will be automated is 13.0%." },
+		  { title: "Software Developers, Systems Software", content: "The probability that this occupation will be automated is 13.0%." },
+		  { title: "Management Analysts", content: "The probability that this occupation will be automated is 13.0%." },
+		  { title: "Dietetic Technicians", content: "The probability that this occupation will be automated is 13.0%." },
+		  { title: "Urban and Regional Planners", content: "The probability that this occupation will be automated is 13.0%." },
+		  { title: "Social and Human Service Assistants", content: "The probability that this occupation will be automated is 13.0%." },
+		  { title: "Self-Enrichment Education Teachers", content: "The probability that this occupation will be automated is 13.0%." },
+		  { title: "Sound Engineering Technicians", content: "The probability that this occupation will be automated is 13.0%." },
+		  { title: "Optometrists", content: "The probability that this occupation will be automated is 14.0%." },
+		  { title: "Mining and Geological Engineers, Including Mining Safety Engineers", content: "The probability that this occupation will be automated is 14.0%." },
+		  { title: "Physician Assistants", content: "The probability that this occupation will be automated is 14.0%." },
+		  { title: "Kindergarten Teachers, Except Special Education", content: "The probability that this occupation will be automated is 15.0%." },
+		  { title: "Electricians", content: "The probability that this occupation will be automated is 15.0%." },
+		  { title: "Petroleum Engineers", content: "The probability that this occupation will be automated is 16.0%." },
+		  { title: "Desktop Publishers", content: "The probability that this occupation will be automated is 16.0%." },
+		  { title: "General and Operations Managers", content: "The probability that this occupation will be automated is 16.0%." },
+		  { title: "Occupational Health and Safety Specialists", content: "The probability that this occupation will be automated is 17.0%." },
+		  { title: "Firefighters", content: "The probability that this occupation will be automated is 17.0%." },
+		  { title: "Financial Examiners", content: "The probability that this occupation will be automated is 17.0%." },
+		  { title: "First-Line Supervisors of Construction Trades and Extraction Workers", content: "The probability that this occupation will be automated is 17.0%." },
+		  { title: "Middle School Teachers, Except Special and Career/Technical Education", content: "The probability that this occupation will be automated is 17.0%." },
+		  { title: "Public Relations Specialists", content: "The probability that this occupation will be automated is 18.0%." },
+		  { title: "Commercial Divers", content: "The probability that this occupation will be automated is 18.0%." },
+		  { title: "Manufactured Building and Mobile Home Installers", content: "The probability that this occupation will be automated is 18.0%." },
+		  { title: "Airline Pilots, Copilots, and Flight Engineers", content: "The probability that this occupation will be automated is 18.0%." },
+		  { title: "Adult Basic and Secondary Education and Literacy Teachers and Instructors", content: "The probability that this occupation will be automated is 19.0%." },
+		  { title: "Epidemiologists", content: "The probability that this occupation will be automated is 20.0%." },
+		  { title: "Funeral Service Managers, Directors, Morticians, and Undertakers", content: "The probability that this occupation will be automated is 20.0%." },
+		  { title: "Information Security Analysts, Web Developers, and Computer Network Architects", content:     "The probability that this occupation will be automated is 21.0%." },
+		  { title: "Actuaries", content: "The probability that this occupation will be automated is 21.0%." },
+		  { title: "Animal Control Workers", content: "The probability that this occupation will be automated is 21.0%." },
+		  { title: "Concierges", content: "The probability that this occupation will be automated is 21.0%." },
+		  { title: "Computer Occupations, All Other", content: "The probability that this occupation will be automated is 22.0%." },
+		  { title: "Statisticians", content: "The probability that this occupation will be automated is 22.0%." },
+		  { title: "Computer Hardware Engineers", content: "The probability that this occupation will be automated is 22.0%." },
+		  { title: "Survey Researchers", content: "The probability that this occupation will be automated is 23.0%." },
+		  { title: "Business Operations Specialists, All Other", content: "The probability that this occupation will be automated is 23.0%." },
+		  { title: "Financial Analysts", content: "The probability that this occupation will be automated is 23.0%." },
+		  { title: "Radiologic Technologists and Technicians", content: "The probability that this occupation will be automated is 23.0%." },
+		  { title: "Cardiovascular Technologists and Technicians", content: "The probability that this occupation will be automated is 23.0%." },
+		  { title: "Agents and Business Managers of Artists, Performers, and Athletes", content: "The probability that this occupation will be automated is 24.0%." },
+		  { title: "Engineering Technicians, Except Drafters, All Other", content: "The probability that this occupation will be automated is 24.0%." },
+		  { title: "Geographers", content: "The probability that this occupation will be automated is 25.0%." },
+		  { title: "Occupational Health and Safety Technicians", content: "The probability that this occupation will be automated is 25.0%." },
+		  { title: "Probation Officers and Correctional Treatment Specialists", content: "The probability that this occupation will be automated is 25.0%." },
+		  { title: "Environmental Engineering Technicians", content: "The probability that this occupation will be automated is 25.0%." },
+		  { title: "Managers, All Other", content: "The probability that this occupation will be automated is 25.0%." },
+		  { title: "Ambulance Drivers and Attendants, Except Emergency Medical Technicians", content: "The probability that this occupation will be automated is 25.0%." },
+			{ title: "Sales Representatives, Wholesale and Manufacturing, Technical and Scientific Products", content: "The probability that this occupation will be automated is 25.0%." },
+		  { title: "Career/Technical Education Teachers, Middle School", content: "The probability that this occupation will be automated is 26.0%." },
+		  { title: "Captains, Mates, and Pilots of Water Vessels", content: "The probability that this occupation will be automated is 27.0%." },
+		  { title: "Occupational Therapy Aides", content: "The probability that this occupation will be automated is 27.0%." },
+		  { title: "Medical Equipment Repairers", content: "The probability that this occupation will be automated is 27.0%." },
+		  { title: "First-Line Supervisors of Retail Sales Workers", content: "The probability that this occupation will be automated is 28.0%." },
+		  { title: "Athletes and Sports Competitors", content: "The probability that this occupation will be automated is 28.0%." },
+		  { title: "Gaming Supervisors", content: "The probability that this occupation will be automated is 28.0%." },
+		  { title: "Skincare Specialists", content: "The probability that this occupation will be automated is 29.0%." },
+		  { title: "Wholesale and Retail Buyers, Except Farm Products", content: "The probability that this occupation will be automated is 29.0%." },
+		  { title: "Biological Technicians", content: "The probability that this occupation will be automated is 30.0%." },
+		  { title: "Medical Assistants", content: "The probability that this occupation will be automated is 30.0%." },
+		  { title: "Zoologists and Wildlife Biologists", content: "The probability that this occupation will be automated is 30.0%." },
+		  { title: "Cooks, Private Household", content: "The probability that this occupation will be automated is 30.0%." },
+		  { title: "Human Resources, Training, and Labor Relations Specialists, All Other", content: "The probability that this occupation will be automated is 31.0%." },
+		  { title: "Private Detectives and Investigators", content: "The probability that this occupation will be automated is 31.0%." },
+		  { title: "Film and Video Editors", content: "The probability that this occupation will be automated is 31.0%." },
+		  { title: "Financial Specialists, All Other", content: "The probability that this occupation will be automated is 33.0%." },
+		  { title: "Detectives and Criminal Investigators", content: "The probability that this occupation will be automated is 34.0%." },
+		  { title: "Surgical Technologists", content: "The probability that this occupation will be automated is 34.0%." },
+		  { title: "Radiation Therapists", content: "The probability that this occupation will be automated is 34.0%." },
+		  { title: "Plumbers, Pipefitters, and Steamfitters", content: "The probability that this occupation will be automated is 35.0%." },
+		  { title: "Flight Attendants", content: "The probability that this occupation will be automated is 35.0%." },
+		  { title: "Diagnostic Medical Sonographers", content: "The probability that this occupation will be automated is 35.0%." },
+		  { title: "Bailiffs", content: "The probability that this occupation will be automated is 36.0%." },
+		  { title: "Computer Numerically Controlled Machine Tool Programmers, Metal and Plastic", content: "The probability that this occupation will be automated is 36.0%." },
+		{ title: "Telecommunications Equipment Installers and Repairers, Except Line Installers", content: "The probability that this occupation will be automated is 36.0%." },
+		{ title: "Furnace, Kiln, Oven, Drier, and Kettle Operators and Tenders", content: "The probability that this occupation will be automated is 37.0%." },
+		{ title: "Cleaners of Vehicles and Equipment", content: "The probability that this occupation will be automated is 37.0%." },
+		{ title: "Funeral Attendants", content: "The probability that this occupation will be automated is 37.0%." },
+		{ title: "Helpers–Extraction Workers", content: "The probability that this occupation will be automated is 37.0%." },
+		{ title: "Actors", content: "The probability that this occupation will be automated is 37.0%." },
+		{ title: "Mine Shuttle Car Operators", content: "The probability that this occupation will be automated is 37.0%." },
+		{ title: "Electrical and Electronics Repairers, Powerhouse, Substation, and Relay", content: "The probability that this occupation will be automated is 38.0%." },
+		{ title: "Surveyors", content: "The probability that this occupation will be automated is 38.0%." },
+		{ title: "Mechanical Engineering Technicians", content: "The probability that this occupation will be automated is 38.0%." },
+		{ title: "Packers and Packagers, Hand", content: "The probability that this occupation will be automated is 38.0%." },
+		{ title: "Interpreters and Translators", content: "The probability that this occupation will be automated is 38.0%." },
+		{ title: "Home Health Aides", content: "The probability that this occupation will be automated is 39.0%." },
+		{ title: "Upholsterers", content: "The probability that this occupation will be automated is 39.0%." },
+		{ title: "Elevator Installers and Repairers", content: "The probability that this occupation will be automated is 39.0%." },
+		{ title: "Gaming Cage Workers", content: "The probability that this occupation will be automated is 39.0%." },
+		{ title: "Audio-Visual and Multimedia Collections Specialists", content: "The probability that this occupation will be automated is 39.0%." },
+		{ title: "Judges, Magistrate Judges, and Magistrates", content: "The probability that this occupation will be automated is 40.0%." },
+		{ title: "Mobile Heavy Equipment Mechanics, Except Engines", content: "The probability that this occupation will be automated is 40.0%." },
+		{ title: "Health Technologists and Technicians, All Other", content: "The probability that this occupation will be automated is 40.0%." },
+		{ title: "Graders and Sorters, Agricultural Products", content: "The probability that this occupation will be automated is 41.0%." },
+		{ title: "Structural Metal Fabricators and Fitters", content: "The probability that this occupation will be automated is 41.0%." },
+		{ title: "Judicial Law Clerks", content: "The probability that this occupation will be automated is 41.0%." },
+		{ title: "Electrical and Electronics Repairers, Commercial and Industrial Equipment", content: "The probability that this occupation will be automated is 41.0%." },
+		{ title: "Forest and Conservation Technicians", content: "The probability that this occupation will be automated is 42.0%." },
+		{ title: "First-Line Supervisors of Helpers, Laborers, and Material Movers, Hand", content: "The probability that this occupation will be automated is 42.0%." },
+		{ title: "Locker Room, Coatroom, and Dressing Room Attendants", content: "The probability that this occupation will be automated is 43.0%." },
+		{ title: "Physical Scientists, All Other", content: "The probability that this occupation will be automated is 43.0%." },
+		{ title: "Economists", content: "The probability that this occupation will be automated is 43.0%." },
+		{ title: "Historians", content: "The probability that this occupation will be automated is 44.0%." },
+		{ title: "Medical Appliance Technicians", content: "The probability that this occupation will be automated is 45.0%." },
+		{ title: "Court, Municipal, and License Clerks", content: "The probability that this occupation will be automated is 46.0%." },
+		{ title: "Compensation, Benefits, and Job Analysis Specialists", content: "The probability that this occupation will be automated is 47.0%." },
+		{ title: "Psychiatric Aides", content: "The probability that this occupation will be automated is 47.0%." },
+		{ title: "Medical and Clinical Laboratory Technicians", content: "The probability that this occupation will be automated is 47.0%." },
+		{ title: "Fire Inspectors and Investigators", content: "The probability that this occupation will be automated is 48.0%." },
+		{ title: "Aerospace Engineering and Operations Technicians", content: "The probability that this occupation will be automated is 48.0%." },
+		{ title: "Merchandise Displayers and Window Trimmers", content: "The probability that this occupation will be automated is 48.0%." },
+		{ title: "Explosives Workers, Ordnance Handling Experts, and Blasters", content: "The probability that this occupation will be automated is 48.0%." },
+		{ title: "Computer Programmers", content: "The probability that this occupation will be automated is 49.0%." },
+		{ title: "Crossing Guards", content: "The probability that this occupation will be automated is 49.0%." },
+		{ title: "Agricultural Engineers", content: "The probability that this occupation will be automated is 49.0%." },
+		{ title: "Roof Bolters, Mining", content: "The probability that this occupation will be automated is 49.0%." },
+		{ title: "Telecommunications Line Installers and Repairers", content: "The probability that this occupation will be automated is 49.0%." },
+		{ title: "Police, Fire, and Ambulance Dispatchers", content: "The probability that this occupation will be automated is 50.0%."},
+		{ title: "Loading Machine Operators, Underground Mining", content: "The probability that this occupation will be automated is 50.0%." },
+		{ title: "Installation, Maintenance, and Repair Workers, All Other", content: "The probability that this occupation will be automated is 50.0%." },
+		{ title: "Court Reporters", content: "The probability that this occupation will be automated is 51.0%." },
+		{ title: "Demonstrators and Product Promoters", content: "The probability that this occupation will be automated is 51.0%." },
+		{ title: "Dental Assistants", content: "The probability that this occupation will be automated is 52.0%." },
+		{ title: "Shoe and Leather Workers and Repairers", content: "The probability that this occupation will be automated is 52.0%." },
+		{ title: "Architectural and Civil Drafters", content: "The probability that this occupation will be automated is 53.0%." },
+		{ title: "Rotary Drill Operators, Oil and Gas", content: "The probability that this occupation will be automated is 53.0%." },
+		{ title: "Hazardous Materials Removal Workers", content: "The probability that this occupation will be automated is 54.0%." },
+		{ title: "Embalmers", content: "The probability that this occupation will be automated is 54.0%." },
+		{ title: "Continuous Mining Machine Operators", content: "The probability that this occupation will be automated is 54.0%." },
+		{ title: "Slot Supervisors", content: "The probability that this occupation will be automated is 54.0%." },
+		{ title: "Massage Therapists", content: "The probability that this occupation will be automated is 55.0%." },
+		{ title: "Advertising Sales Agents", content: "The probability that this occupation will be automated is 55.0%." },
+		{ title: "Automotive Glass Installers and Repairers", content: "The probability that this occupation will be automated is 55.0%." },
+		{ title: "Commercial Pilots", content: "The probability that this occupation will be automated is 55.0%." },
+		{ title: "Customer Service Representatives", content: "The probability that this occupation will be automated is 56.0%." },
+		{ title: "Audio and Video Equipment Technicians", content: "The probability that this occupation will be automated is 57.0%." },
+		{ title: "Teacher Assistants", content: "The probability that this occupation will be automated is 57.0%." },
+		{ title: "First-Line Supervisors of Farming, Fishing, and Forestry Workers", content: "The probability that this occupation will be automated is 57.0%." },
+		{ title: "Chemical Technicians", content: "The probability that this occupation will be automated is 57.0%." },
+		{ title: "Helpers–Pipelayers, Plumbers, Pipefitters, and Steamfitters", content: "The probability that this occupation will be automated is 58.0%." },
+		{ title: "Cost Estimators", content: "The probability that this occupation will be automated is 58.0%." },
+		{ title: "Transit and Railroad Police", content: "The probability that this occupation will be automated is 57.0%." },
+		{ title: "First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers", content: "The probability that this occupation will be automated is 57.0%." },
+		{ title: "Personal Financial Advisors", content: "The probability that this occupation will be automated is 58.0%." },
+		{ title: "Millwrights", content: "The probability that this occupation will be automated is 59.0%." },
+		{ title: "Museum Technicians and Conservators", content: "The probability that this occupation will be automated is 59.0%." },
+		{ title: "Mine Cutting and Channeling Machine Operators", content: "The probability that this occupation will be automated is 59.0%." },
+		{ title: "Transportation, Storage, and Distribution Managers", content: "The probability that this occupation will be automated is 59.0%." },
+		{ title: "Recreational Vehicle Service Technicians", content: "The probability that this occupation will be automated is 59.0%." },
+		{ title: "Automotive Service Technicians and Mechanics", content: "The probability that this occupation will be automated is 59.0%." },
+		{ title: "Correctional Officers and Jailers", content: "The probability that this occupation will be automated is 60.0%." },
+		{ title: "Camera Operators, Television, Video, and Motion Picture", content: "The probability that this occupation will be automated is 60.0%." },
+		{ title: "Slaughterers and Meat Packers", content: "The probability that this occupation will be automated is 60.0%." },
+		{ title: "Electronic Equipment Installers and Repairers, Motor Vehicles", content: "The probability that this occupation will be automated is 61.0%." },
+		{ title: "Physical Therapist Aides", content: "The probability that this occupation will be automated is 61.0%." },
+		{ title: "Costume Attendants", content: "The probability that this occupation will be automated is 61.0%." },
+		{ title: "Market Research Analysts and Marketing Specialists", content: "The probability that this occupation will be automated is 61.0%." },
+		{ title: "Reservation and Transportation Ticket Agents and Travel Clerks", content: "The probability that this occupation will be automated is 61.0%." },
+		{ title: "Water and Wastewater Treatment Plant and System Operators", content: "The probability that this occupation will be automated is 61.0%." },
+		{ title: "Life, Physical, and Social Science Technicians, All Other", content: "The probability that this occupation will be automated is 61.0%." },
+		{ title: "Food Cooking Machine Operators and Tenders", content: "The probability that this occupation will be automated is 61.0%." },
+		{ title: "Welding, Soldering, and Brazing Machine Setters, Operators, and Tenders", content: "The probability that this occupation will be automated is 61.0%." },
+		{ title: "Motorboat Operators", content: "The probability that this occupation will be automated is 62.0%." },
+		{ title: "Tapers", content: "The probability that this occupation will be automated is 62.0%." },
+		{ title: "Pipelayers", content: "The probability that this occupation will be automated is 62.0%." },
+		{ title: "Geoscientists, Except Hydrologists and Geographers", content: "The probability that this occupation will be automated is 62.0%." },
+		{ title: "Control and Valve Installers and Repairers, Except Mechanical Door", content: "The probability that this occupation will be automated is 62.0%." },
+		{ title: "Healthcare Support Workers, All Other", content: "The probability that this occupation will be automated is 62.0%." },
+		{ title: "First-Line Supervisors of Food Preparation and Serving Workers", content: "The probability that this occupation will be automated is 62.0%." },
+		{ title: "Construction and Building Inspectors", content: "The probability that this occupation will be automated is 62.0%." },
+		{ title: "Cutters and Trimmers, Hand", content: "The probability that this occupation will be automated is 62.0%." },
+		{ title: "Maintenance and Repair Workers, General", content: "The probability that this occupation will be automated is 62.0%." },
+		{ title: "Administrative Law Judges, Adjudicators, and Hearing Officers", content: "The probability that this occupation will be automated is 63.0%." },
+		{ title: "Stock Clerks and Order Fillers", content: "The probability that this occupation will be automated is 63.0%." },
+		{ title: "Power Distributors and Dispatchers", content: "The probability that this occupation will be automated is 63.0%." },
+		{ title: "Insulation Workers, Mechanical", content: "The probability that this occupation will be automated is 63.0%." },
+		{ title: "Social Science Research Assistants", content: "The probability that this occupation will be automated is 63.0%." },
+		{ title: "Machinists", content: "The probability that this occupation will be automated is 63.0%." },
+		{ title: "Computer Support Specialists", content: "The probability that this occupation will be automated is 64.0%." },
+		{ title: "Librarians", content: "The probability that this occupation will be automated is 64.0%." },
+		{ title: "Electronic Home Entertainment Equipment Installers and Repairers", content: "The probability that this occupation will be automated is 64.0%." },
+		{ title: "Heating, Air Conditioning, and Refrigeration Mechanics and Installers", content: "The probability that this occupation will be automated is 64.0%." },
+		{ title: "Hoist and Winch Operators", content: "The probability that this occupation will be automated is 64.0%." },
+		{ title: "Pest Control Workers", content: "The probability that this occupation will be automated is 64.0%." },
+		{ title: "Helpers–Production Workers", content: "The probability that this occupation will be automated is 64.0%." },
+		{ title: "Statistical Assistants", content: "The probability that this occupation will be automated is 64.0%." },
+		{ title: "Janitors and Cleaners, Except Maids and Housekeeping Cleaners", content: "The probability that this occupation will be automated is 65.0%." },
+		{ title: "Motorboat Mechanics and Service Technicians", content: "The probability that this occupation will be automated is 65.0%." },
+		{ title: "Paper Goods Machine Setters, Operators, and Tenders", content: "The probability that this occupation will be automated is 76.0%." },
+		{ title: "Paper Goods Machine Setters, Operators, and Tenders", content: "The probability that this occupation will be automated is 67%." },
+{ title: "Foundry Mold and Coremakers", content: "The probability that this occupation will be automated is 67%." },
+{ title: "Atmospheric and Space Scientists", content: "The probability that this occupation will be automated is 67%." },
+{ title: "Bus Drivers, Transit and Intercity", content: "The probability that this occupation will be automated is 67%." },
+{ title: "Lifeguards, Ski Patrol, and Other Recreational Protective Service Workers", content: "The probability that this occupation will be automated is 67%." },
+{ title: "Industrial Machinery Mechanics", content: "The probability that this occupation will be automated is 67%." },
+{ title: "Postal Service Mail Carriers", content: "The probability that this occupation will be automated is 68%." },
+{ title: "Roustabouts, Oil and Gas Boilermakers", content: "The probability that this occupation will be automated is 68%." },
+{ title: "Mechanical Drafters Dental Hygienists", content: "The probability that this occupation will be automated is 68%." },
+{ title: "Light Truck or Delivery Services Drivers", content: "The probability that this occupation will be automated is 68%." },
+{ title: "Maids and Housekeeping Cleaners", content: "The probability that this occupation will be automated is 68%." },
+{ title: "Painters, Transportation Equipment", content: "The probability that this occupation will be automated is 69%." },
+{ title: "Eligibility Interviewers, Government Programs", content: "The probability that this occupation will be automated is 69%." },
+{ title: "Tire Repairers and Changers", content: "The probability that this occupation will be automated is 69%." },
+{ title: "Food Batchmakers", content: "The probability that this occupation will be automated is 70%." },
+{ title: "Avionics Technicians", content: "The probability that this occupation will be automated is 70%." },
+{ title: "Aircraft Mechanics and Service Technicians", content: "The probability that this occupation will be automated is 70%." },
+{ title: "Airfield Operations Specialists", content: "The probability that this occupation will be automated is 70%." },
+{ title: "Petroleum Pump System Operators, Refinery Operators, and Gaugers", content: "The probability that this occupation will be automated is 71%." },
+{ title: "Construction and Related Workers, All Other", content: "The probability that this occupation will be automated is 71%." },
+{ title: "Opticians, Dispensing", content: "The probability that this occupation will be automated is 71%." },
+{ title: "Laundry and Dry-Cleaning Workers", content: "The probability that this occupation will be automated is 71%." },
+{ title: "Amusement and Recreation Attendants", content: "The probability that this occupation will be automated is 71%." },
+{ title: "Pharmacy Aides", content: "The probability that this occupation will be automated is 71%." },
+{ title: "Helpers–Roofers", content: "The probability that this occupation will be automated is 72%." },
+{ title: "Tank Car, Truck, and Ship Loaders", content: "The probability that this occupation will be automated is 72%." },
+{ title: "Home Appliance Repairers", content: "The probability that this occupation will be automated is 72%." },
+{ title: "Carpenters", content: "The probability that this occupation will be automated is 72%." },
+{ title: "Public Address System and Other Announcers", content: "The probability that this occupation will be automated is 72%." },
+{ title: "Textile Knitting and Weaving Machine Setters, Operators, and Tenders", content: "The probability that this occupation will be automated is 72%." },
+{ title: "Administrative Services Managers", content: "The probability that this occupation will be automated is 73%." },
+{ title: "Glaziers", content: "The probability that this occupation will be automated is 73%." },
+{ title: "Coil Winders, Tapers, and Finishers", content: "The probability that this occupation will be automated is 73%." },
+{ title: "Bus and Truck Mechanics and Diesel Engine Specialists", content: "The probability that this occupation will be automated is 73%." },
+{ title: "Computer, Automated Teller, and Office Machine Repairers", content: "The probability that this occupation will be automated is 73%." },
+{ title: "Personal Care Aides", content: "The probability that this occupation will be automated is 74%." },
+{ title: "Broadcast Technicians", content: "The probability that this occupation will be automated is 74%." },
+{ title: "Helpers–Electricians", content: "The probability that this occupation will be automated is 74%." },
+{ title: "Postmasters and Mail Superintendents", content: "The probability that this occupation will be automated is 74%." },
+{ title: "Tile and Marble Setters", content: "The probability that this occupation will be automated is 75%." },
+{ title: "Painters, Construction and Maintenance", content: "The probability that this occupation will be automated is 75%." },
+{ title: "Transportation Attendants, Except Flight Attendants", content: "The probability that this occupation will be automated is 75%." },
+{ title: "Civil Engineering Technicians", content: "The probability that this occupation will be automated is 75%." },
+{ title: "Farm Equipment Mechanics and Service Technicians", content: "The probability that this occupation will be automated is 75%." },
+{ title: "Archivists", content: "The probability that this occupation will be automated is 75%." },
+{ title: "Chemical Equipment Operators and Tenders", content: "The probability that this occupation will be automated is 76%." },
+{ title: "Electric Motor, Power Tool, and Related Repairers", content: "The probability that this occupation will be automated is 76%." },
+{ title: "Fallers", content: "The probability that this occupation will be automated is 76%." },
+{ title: "Environmental Science and Protection Technicians, Including Health Locksmiths and Safe Repairers", content: "The probability that this occupation will be automated is 77%." },
+{ title: "Tree Trimmers and Pruners", content: "The probability that this occupation will be automated is 77%." },
+{ title: "Bartenders", content: "The probability that this occupation will be automated is 77%." },
+{ title: "Purchasing Agents, Except Wholesale, Retail, and Farm Products Dishwashers", content: "The probability that this occupation will be automated is 77%." },
+{ title: "Hunters and Trappers", content: "The probability that this occupation will be automated is 77%." },
+{ title: "Medical Equipment Preparers", content: "The probability that this occupation will be automated is 77%." },
+{ title: "Cutting, Punching, and Press Machine Setters, Operators, and Tenders, Metal and Plastic", content: "The probability that this occupation will be automated is 78%." },
+{ title: "Computer Operators", content: "The probability that this occupation will be automated is 78%." },
+{ title: "Gas Plant Operators", content: "The probability that this occupation will be automated is 78%." },
+{ title: "Postal Service Mail Sorters, Processors, and Processing Machine Operators", content: "The probability that this occupation will be automated is 78%." },
+{ title: "Heavy and Tractor-Trailer Truck Drivers", content: "The probability that this occupation will be automated is 79%." },
+{ title: "Shampooers", content: "The probability that this occupation will be automated is 79%." },
+{ title: "Drywall and Ceiling Tile Installers", content: "The probability that this occupation will be automated is 79%." },
+{ title: "Helpers–Installation, Maintenance, and Repair Workers", content: "The probability that this occupation will be automated is 79%." },
+{ title: "Motorcycle Mechanics", content: "The probability that this occupation will be automated is 79%." },
+{ title: "Aircraft Structure, Surfaces, Rigging, and Systems Assemblers Logging Equipment Operators", content: "The probability that this occupation will be automated is 79%." },
+{ title: "Floor Layers, Except Carpet, Wood, and Hard Tiles", content: "The probability that this occupation will be automated is 79%." },
+{ title: "Barbers", content: "The probability that this occupation will be automated is 80%." },
+{ title: "Derrick Operators, Oil and Gas", content: "The probability that this occupation will be automated is 80%." },
+{ title: "Cooks, Fast Food", content: "The probability that this occupation will be automated is 80%." },
+{ title: "Word Processors and Typists", content: "The probability that this occupation will be automated is 80%." },
+{ title: "Electrical and Electronics Drafters", content: "The probability that this occupation will be automated is 81%." },
+{ title: "Electro-Mechanical Technicians", content: "The probability that this occupation will be automated is 81%." },
+{ title: "Cleaning, Washing, and Metal Pickling Equipment Operators and Tenders", content: "The probability that this occupation will be automated is 81%." },
+{ title: "Property, Real Estate, and Community Association Managers", content: "The probability that this occupation will be automated is 81%." },
+{ title: "Medical Secretaries", content: "The probability that this occupation will be automated is 81%." },
+{ title: "Pressers, Textile, Garment, and Related Materials", content: "The probability that this occupation will be automated is 82%." },
+{ title: "Engine and Other Machine Assemblers", content: "The probability that this occupation will be automated is 82%." },
+{ title: "Security and Fire Alarm Systems Installers", content: "The probability that this occupation will be automated is 82%." },
+{ title: "Refractory Materials Repairers, Except Brickmasons", content: "The probability that this occupation will be automated is 82%." },
+{ title: "Nonfarm Animal Caretakers", content: "The probability that this occupation will be automated is 82%." },
+{ title: "Sheet Metal Workers", content: "The probability that this occupation will be automated is 82%." },
+{ title: "Pile-Driver Operators", content: "The probability that this occupation will be automated is 82%." },
+{ title: "Brickmasons and Blockmasons", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Fishers and Related Fishing Workers", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Structural Iron and Steel Workers", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Railroad Brake, Signal, and Switch Operators", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Railroad Conductors and Yardmasters", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Cooks, Institution and Cafeteria", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Sailors and Marine Oilers", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Mixing and Blending Machine Setters, Operators, and Tenders", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Helpers–Brickmasons, Blockmasons, Stonemasons, and Tile and Marble Setters", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Segmental Pavers", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Insulation Workers, Floor, Ceiling, and Wall", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Printing Press Operators", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Automotive and Watercraft Service Attendants", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Septic Tank Servicers and Sewer Pipe Cleaners", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Baggage Porters and Bellhops", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Gaming Change Persons and Booth Cashiers", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Rolling Machine Setters, Operators, and Tenders, Metal and Plastic", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Paving, Surfacing, and Tamping Equipment Operators", content: "The probability that this occupation will be automated is 83%." },
+{ title: "Tool and Die Makers", content: "The probability that this occupation will be automated is 84%." },
+{ title: "Electrical and Electronics Engineering Technicians", content: "The probability that this occupation will be automated is 84%." },
+{ title: "Plasterers and Stucco Masons", content: "The probability that this occupation will be automated is 84%." },
+{ title: "Layout Workers, Metal and Plastic", content: "The probability that this occupation will be automated is 84%." },
+{ title: "Lathe and Turning Machine Tool Setters, Operators, and Tenders, Metal and Plastic", content: "The probability that this occupation will be automated is 84%." },
+{ title: "Security Guards", content: "The probability that this occupation will be automated is 84%." },
+{ title: "Tailors, Dressmakers, and Custom Sewers", content: "The probability that this occupation will be automated is 84%." },
+{ title: "Wellhead Pumpers", content: "The probability that this occupation will be automated is 84%." },
+{ title: "Proofreaders and Copy Markers", content: "The probability that this occupation will be automated is 84%." },
+{ title: "Parking Enforcement Workers", content: "The probability that this occupation will be automated is 84%." },
+{ title: "Laborers and Freight, Stock, and Material Movers, Hand", content: "The probability that this occupation will be automated is 85%." },
+{ title: "Sales Representatives, Wholesale and Manufacturing, Except Technical and Scientific Products", content: "The probability that this occupation will be automated is 85%." },
+{ title: "Meter Readers, Utilities", content: "The probability that this occupation will be automated is 85%." },
+{ title: "Power Plant Operators", content: "The probability that this occupation will be automated is 85%." },
+{ title: "Chemical Plant and System Operators", content: "The probability that this occupation will be automated is 85%." },
+{ title: "Earth Drillers, Except Oil and Gas", content: "The probability that this occupation will be automated is 85%." },
+{ title: "Nuclear Technicians", content: "The probability that this occupation will be automated is 85%." },
+{ title: "Executive Secretaries and Executive Administrative Assistants", content: "The probability that this occupation will be automated is 85%." },
+{ title: "Plant and System Operators, All Other", content: "The probability that this occupation will be automated is 85%." },
+{ title: "Food Servers, Nonrestaurant", content: "The probability that this occupation will be automated is 85%." },
+{ title: "Sawing Machine Setters, Operators, and Tenders, Wood", content: "The probability that this occupation will be automated is 86%." },
+{ title: "Subway and Streetcar Operators", content: "The probability that this occupation will be automated is 86%." },
+{ title: "Veterinary Assistants and Laboratory Animal Caretakers", content: "The probability that this occupation will be automated is 86%." },
+{ title: "Cutting and Slicing Machine Setters, Operators, and Tenders", content: "The probability that this occupation will be automated is 86%." },
+{ title: "Real Estate Sales Agents", content: "The probability that this occupation will be automated is 86%." },
+{ title: "Computer-Controlled Machine Tool Operators, Metal and Plastic", content: "The probability that this occupation will be automated is 86%." },
+{ title: "Maintenance Workers, Machinery", content: "The probability that this occupation will be automated is 86%." },
+{ title: "Correspondence Clerks", content: "The probability that this occupation will be automated is 86%." },
+{ title: "Miscellaneous Agricultural Workers", content: "The probability that this occupation will be automated is 87%." },
+{ title: "Forest and Conservation Workers", content: "The probability that this occupation will be automated is 87%." },
+{ title: "Pourers and Casters, Metal", content: "The probability that this occupation will be automated is 87%." },
+{ title: "Carpet Installers", content: "The probability that this occupation will be automated is 87%." },
+{ title: "Paperhangers", content: "The probability that this occupation will be automated is 87%." },
+{ title: "Buyers and Purchasing Agents, Farm Products", content: "The probability that this occupation will be automated is 87%." },
+{ title: "Furniture Finishers", content: "The probability that this occupation will be automated is 87%." },
+{ title: "Food Preparation Workers", content: "The probability that this occupation will be automated is 87%." },
+{ title: "Floor Sanders and Finishers", content: "The probability that this occupation will be automated is 87%." },
+{ title: "Parking Lot Attendants", content: "The probability that this occupation will be automated is 87%." },
+{ title: "Highway Maintenance Workers", content: "The probability that this occupation will be automated is 87%." },
+{ title: "Construction Laborers", content: "The probability that this occupation will be automated is 88%." },
+{ title: "Production, Planning, and Expediting Clerks", content: "The probability that this occupation will be automated is 88%." },
+{ title: "Semiconductor Processors", content: "The probability that this occupation will be automated is 88%." },
+{ title: "Cartographers and Photogrammetrists", content: "The probability that this occupation will be automated is 88%." },
+{ title: "Metal-Refining Furnace Operators and Tenders", content: "The probability that this occupation will be automated is 88%." },
+{ title: "Separating, Filtering, Clarifying, Precipitating, and Still Machine Setters, Operators, and Tenders", content: "The probability that this occupation will be automated is 88%." },
+{ title: "Extruding and Forming Machine Setters, Operators, and Tenders, Synthetic and Glass Fibers", content: "The probability that this occupation will be automated is 88%." },
+{ title: "Terrazzo Workers and Finishers", content: "The probability that this occupation will be automated is 88%." },
+{ title: "Tool Grinders, Filers, and Sharpeners", content: "The probability that this occupation will be automated is 88%." },
+{ title: "Rail Car Repairers", content: "The probability that this occupation will be automated is 89%." },
+{ title: "Bakers", content: "The probability that this occupation will be automated is 89%." },
+{ title: "Medical Transcriptionists", content: "The probability that this occupation will be automated is 89%." },
+{ title: "Stonemasons", content: "The probability that this occupation will be automated is 89%." },
+{ title: "Bus Drivers, School or Special Client", content: "The probability that this occupation will be automated is 89%." },
+{ title: "Technical Writers", content: "The probability that this occupation will be automated is 89%." },
+{ title: "Riggers", content: "The probability that this occupation will be automated is 89%." },
+{ title: "Rail-Track Laying and Maintenance Equipment Operators", content: "The probability that this occupation will be automated is 89%." },
+{ title: "Stationary Engineers and Boiler Operators", content: "The probability that this occupation will be automated is 89%." },
+{ title: "Sewing Machine Operators", content: "The probability that this occupation will be automated is 89%." },
+{ title: "Taxi Drivers and Chauffeurs", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Human Resources Assistants, Except Payroll and Timekeeping", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Medical and Clinical Laboratory Technologists", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Reinforcing Iron and Rebar Workers", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Roofers", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Crane and Tower Operators", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Traffic Technicians", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Transportation Inspectors", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Patternmakers, Metal and Plastic", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Molders, Shapers, and Casters, Except Metal and Plastic", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Appraisers and Assessors of Real Estate", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Pump Operators, Except Wellhead Pumpers", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Signal and Track Switch Repairers", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Gaming and Sports Book Writers and Runners", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Musical Instrument Repairers and Tuners", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Tour Guides and Escorts", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Mechanical Door Repairers", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Food and Tobacco Roasting, Baking, and Drying Machine Operators and Tenders", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Gas Compressor and Gas Pumping Station Operators", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Medical Records and Health Information Technicians", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Coating, Painting, and Spraying Machine Setters, Operators, and Tenders", content: "The probability that this occupation will be automated is 90%." },
+{ title: "Multiple Machine Tool Setters, Operators, and Tenders, Metal and Plastic", content: "The probability that this occupation will be automated is 91%." },
+{ title: "Rail Yard Engineers, Dinkey Operators, and Hostlers", content: "The probability that this occupation will be automated is 91%." },
+{ title: "Electrical and Electronics Installers and Repairers, Transportation Equipment", content: "The probability that this occupation will be automated is 91%." },
+{ title: "Dining Room and Cafeteria Attendants and Bartender Helpers", content: "The probability that this occupation will be automated is 91%." },
+{ title: "Heat Treating Equipment Setters, Operators, and Tenders, Metal and Plastic", content: "The probability that this occupation will be automated is 91%." },
+{ title: "Geological and Petroleum Technicians", content: "The probability that this occupation will be automated is 91%." },
+{ title: "Automotive Body and Related Repairers", content: "The probability that this occupation will be automated is 91%." },
+{ title: "Patternmakers, Wood", content: "The probability that this occupation will be automated is 91%." },
+{ title: "Extruding and Drawing Machine Setters, Operators, and Tenders, Metal and Plastic", content: "The probability that this occupation will be automated is 91%." },
+{ title: "Office Machine Operators, Except Computer", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Pharmacy Technicians", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Loan Interviewers and Clerks", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Dredge Operators", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Insurance Sales Agents", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Cabinetmakers and Bench Carpenters", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Painting, Coating, and Decorating Workers", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Fence Erectors", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Plating and Coating Machine Setters, Operators, and Tenders, Metal and Plastic", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Retail Salespersons", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Combined Food Preparation and Serving Workers, Including Fast Food Production Workers, All Other", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Helpers–Carpenters", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Cooling and Freezing Equipment Operators and Tenders", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Fiberglass Laminators and Fabricators", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Service Unit Operators, Oil, Gas, and Mining", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Conveyor Operators and Tenders", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Outdoor Power Equipment and Other Small Engine Mechanics", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Locomotive Firers", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Machine Feeders and Offbearers", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Model Makers, Metal and Plastic", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Radio, Cellular, and Tower Equipment Installers and Repairs", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Butchers and Meat Cutters", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Extruding, Forming, Pressing, and Compacting Machine Setters, Operators, and Tenders", content: "The probability that this occupation will be automated is 92%." },
+{ title: "Refuse and Recyclable Material Collectors", content: "The probability that this occupation will be automated is 93%." },
+{ title: "Tax Examiners and Collectors, and Revenue Agents", content: "The probability that this occupation will be automated is 93%." },
+{ title: "Forging Machine Setters, Operators, and Tenders, Metal and Plastic", content: "The probability that this occupation will be automated is 93%." },
+{ title: "Industrial Truck and Tractor Operators", content: "The probability that this occupation will be automated is 93%." },
+{ title: "Accountants and Auditors", content: "The probability that this occupation will be automated is 94%." },
+{ title: "Drilling and Boring Machine Tool Setters, Operators, and Tenders, Metal and Plastic", content: "The probability that this occupation will be automated is 94%." },
+{ title: "Mail Clerks and Mail Machine Operators, Except Postal Service", content: "The probability that this occupation will be automated is 94%." },
+{ title: "Waiters and Waitresses", content: "The probability that this occupation will be automated is 94%." },
+  { title: "Drilling and Boring Machine Tool Setters, Operators, and Tenders, Metal and Plastic", content: "The probability that this occupation will be automated is 94%." },
+  { title: "Mail Clerks and Mail Machine Operators, Except Postal Service", content: "The probability that this occupation will be automated is 94%." },
+  { title: "Waiters and Waitresses", content: "The probability that this occupation will be automated is 94%." },
+  { title: "Bicycle Repairers", content: "The probability that this occupation will be automated is 94%." },
+  { title: "Coin, Vending, and Amusement Machine Servicers and Repairers", content: "The probability that this occupation will be automated is 94%." },
+  { title: "Welders, Cutters, Solderers, and Brazers", content: "The probability that this occupation will be automated is 94%." },
+  { title: "Couriers and Messengers", content: "The probability that this occupation will be automated is 94%." },
+  { title: "Interviewers, Except Eligibility and Loan", content: "The probability that this occupation will be automated is 94%." },
+  { title: "Cooks, Short Order", content: "The probability that this occupation will be automated is 94%." },
+  { title: "Excavating and Loading Machine and Dragline Operators", content: "The probability that this occupation will be automated is 94%." },
+  { title: "Helpers–Painters, Paperhangers, Plasterers, and Stucco Masons", content: "The probability that this occupation will be automated is 94%." },
+  { title: "Hotel, Motel, and Resort Desk Clerks", content: "The probability that this occupation will be automated is 94%." },
+  { title: "Tire Builders", content: "The probability that this occupation will be automated is 94%." },
+  { title: "Door-to-Door Sales Workers, News and Street Vendors, and Related Workers", content: "The probability that this occupation will be automated is 94%." },
+  { title: "First-Line Supervisors of Housekeeping and Janitorial Workers", content: "The probability that this occupation will be automated is 95%." },
+  { title: "Agricultural Inspectors", content: "The probability that this occupation will be automated is 95%." },
+  { title: "Paralegals and Legal Assistants", content: "The probability that this occupation will be automated is 95%." },
+  { title: "Manicurists and Pedicurists", content: "The probability that this occupation will be automated is 95%." },
+  { title: "Weighers, Measurers, Checkers, and Samplers, Recordkeeping", content: "The probability that this occupation will be automated is 95%." },
+  { title: "Textile Cutting Machine Setters, Operators, and Tenders", content: "The probability that this occupation will be automated is 95%." },
+  { title: "Bill and Account Collectors", content: "The probability that this occupation will be automated is 95%." },
+  { title: "Nuclear Power Reactor Operators", content: "The probability that this occupation will be automated is 95%." },
+  { title: "Gaming Surveillance Officers and Gaming Investigators", content: "The probability that this occupation will be automated is 95%." },
+{ title: "Library Assistants, Clerical", content: "The probability that this occupation will be automated is 95%." },
+{ title: "Operating Engineers and Other Construction Equipment Operators", content: "The probability that this occupation will be automated is 95%." },
+{ title: "Print Binding and Finishing Workers", content: "The probability that this occupation will be automated is 95%." },
+{ title: "Animal Breeders", content: "The probability that this occupation will be automated is 95%." },
+{ title: "Molding, Coremaking, and Casting Machine Setters, Operators, and Tenders, Metal and Plastic", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Electrical and Electronic Equipment Assemblers", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Adhesive Bonding Machine Operators and Tenders", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Landscaping and Groundskeeping Workers", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Grinding, Lapping, Polishing, and Buffing Machine Tool Setters, Operators, and Tenders, Metal and Plastic", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Postal Service Clerks", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Jewelers and Precious Stone and Metal Workers", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Dispatchers, Except Police, Fire, and Ambulance", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Receptionists and Information Clerks", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Office Clerks, General", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Compensation and Benefits Managers", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Switchboard Operators, Including Answering Service", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Counter Attendants, Cafeteria, Food Concession, and Coffee Shop", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Rock Splitters, Quarry", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Secretaries and Administrative Assistants, Except Legal, Medical, and Executive", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Surveying and Mapping Technicians", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Model Makers, Wood", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Textile Winding, Twisting, and Drawing Out Machine Setters, Operators, and Tenders", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Locomotive Engineers", content: "The probability that this occupation will be automated is 96%." },
+{ title: "Gaming Dealers", content: "The probability that this occupation will be automated is 96%." },
+  { title: "Fabric Menders, Except Garment", content: "The probability that this occupation will be automated is 96%." },
+  { title: "Cooks, Restaurant", content: "The probability that this occupation will be automated is 96%." },
+  { title: "Ushers, Lobby Attendants, and Ticket Takers", content: "The probability that this occupation will be automated is 96%." },
+  { title: "Billing and Posting Clerks", content: "The probability that this occupation will be automated is 96%." },
+  { title: "Bridge and Lock Tenders", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Woodworking Machine Setters, Operators, and Tenders, Except Sawing Team Assemblers", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Shoe Machine Operators and Tenders", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Electromechanical Equipment Assemblers", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Farm Labor Contractors", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Textile Bleaching and Dyeing Machine Operators and Tenders", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Dental Laboratory Technicians", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Crushing, Grinding, and Polishing Machine Setters, Operators, and Tenders", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Grinding and Polishing Workers, Hand", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Pesticide Handlers, Sprayers, and Applicators, Vegetation", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Log Graders and Scalers", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Ophthalmic Laboratory Technicians", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Cashiers", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Camera and Photographic Equipment Repairers", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Motion Picture Projectionists", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Prepress Technicians and Workers", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Counter and Rental Clerks", content: "The probability that this occupation will be automated is 97%." },
+  { title: "File Clerks", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Real Estate Brokers", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Telephone Operators", content: "The probability that this occupation will be automated is 97%." },
+  { title: "Agricultural and Food Science Technicians", content: "The probability that this occupation will be automated is 97%." },
+{ title: "Payroll and Timekeeping Clerks", content: "The probability that this occupation will be automated is 97%." },
+{ title: "Credit Authorizers, Checkers, and Clerks", content: "The probability that this occupation will be automated is 97%." },
+{ title: "Hosts and Hostesses, Restaurant, Lounge, and Coffee Shop", content: "The probability that this occupation will be automated is 97%." },
+{ title: "Models", content: "The probability that this occupation will be automated is 97%." },
+{ title: "Inspectors, Testers, Sorters, Samplers, and Weighers", content: "The probability that this occupation will be automated is 97%." },
+{ title: "Bookkeeping, Accounting, and Auditing Clerks", content: "The probability that this occupation will be automated is 97%." },
+{ title: "Legal Secretaries", content: "The probability that this occupation will be automated is 97%." },
+{ title: "Radio Operators", content: "The probability that this occupation will be automated is 97%." },
+{ title: "Driver/Sales Workers", content: "The probability that this occupation will be automated is 97%." },
+{ title: "Claims Adjusters, Examiners, and Investigators", content: "The probability that this occupation will be automated is 97%." },
+{ title: "Parts Salespersons", content: "The probability that this occupation will be automated is 97%." },
+{ title: "Credit Analysts", content: "The probability that this occupation will be automated is 97%." },
+{ title: "Milling and Planing Machine Setters, Operators, and Tenders, Metal and Plastic", content: "The probability that this occupation will be automated is 98%." },
+{ title: "Shipping, Receiving, and Traffic Clerks", content: "The probability that this occupation will be automated is 98%." },
+{ title: "Procurement Clerks", content: "The probability that this occupation will be automated is 98%." },
+{ title: "Packaging and Filling Machine Operators and Tenders", content: "The probability that this occupation will be automated is 98%." },
+{ title: "Etchers and Engravers", content: "The probability that this occupation will be automated is 98%." },
+{ title: "Tellers", content: "The probability that this occupation will be automated is 98%." },
+{ title: "Umpires, Referees, and Other Sports Officials", content: "The probability that this occupation will be automated is 98%." },
+{ title: "Insurance Appraisers, Auto Damage", content: "The probability that this occupation will be automated is 98%." },
+{ title: "Loan Officers", content: "The probability that this occupation will be automated is 98%." },
+ { title: "Order Clerks", content: "The probability that this occupation will be automated is 98%." },
+  { title: "Brokerage Clerks", content: "The probability that this occupation will be automated is 98%." },
+  { title: "Insurance Claims and Policy Processing Clerks", content: "The probability that this occupation will be automated is 98%." },
+  { title: "Timing Device Assemblers and Adjusters", content: "The probability that this occupation will be automated is 98%." },
+  { title: "Data Entry Keyers", content: "The probability that this occupation will be automated is 99%." },
+  { title: "Library Technicians", content: "The probability that this occupation will be automated is 99%." },
+  { title: "New Accounts Clerks", content: "The probability that this occupation will be automated is 99%." },
+  { title: "Photographic Process Workers and Processing Machine Operators", content: "The probability that this occupation will be automated is 99%." },
+  { title: "Tax Preparers", content: "The probability that this occupation will be automated is 99%." },
+  { title: "Cargo and Freight Agents", content: "The probability that this occupation will be automated is 99%." },
+  { title: "Watch Repairers", content: "The probability that this occupation will be automated is 99%." },
+  { title: "Insurance Underwriters", content: "The probability that this occupation will be automated is 99%." },
+  { title: "Mathematical Technicians", content: "The probability that this occupation will be automated is 99%." },
+  { title: "Sewers, Hand", content: "The probability that this occupation will be automated is 99%." },
+  { title: "Title Examiners, Abstractors, and Searchers", content: "The probability that this occupation will be automated is 99%." },
+  { title: "Telemarketers", content: "The probability that this occupation will be automated is 99%." }
+
+				];
+
+		var matchingResults = data.filter(function(item) {
+			// Filter the data based on the search query
+			return item.title.toLowerCase().includes(query.toLowerCase()) || item.content.toLowerCase().includes(query.toLowerCase());
+		});
+
+		// Display the search results
+		if (matchingResults.length > 0) {
+			matchingResults.forEach(function(result) {
+				// Create HTML elements for each search result
+				var resultElement = document.createElement("div");
+				var titleElement = document.createElement("h3");
+				var contentElement = document.createElement("p");
+
+				// Set the title and content of the search result
+				titleElement.textContent = result.title;
+				contentElement.textContent = result.content;
+
+				// Append the title and content to the result element
+				resultElement.appendChild(titleElement);
+				resultElement.appendChild(contentElement);
+
+				// Append the result element to the search content div
+				searchContent.appendChild(resultElement);
+			});
+		} else {
+			// Display a message if no search results found
+			var noResultsElement = document.createElement("p");
+			noResultsElement.textContent = "No results found.";
+			searchContent.appendChild(noResultsElement);
+		}
+
+	}
+
+	// Add an event listener to the form submit event
+	document.getElementById("form").addEventListener("submit", function(event) {
+		event.preventDefault(); // Prevent form submission
+		search(); // Call the search function
+	});
+</script>
+
+
+</body>
+
+
+
+</html>
