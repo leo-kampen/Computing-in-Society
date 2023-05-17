@@ -1,3 +1,3 @@
-# Computing-in-Society
+Here is the link to the homepage of my website:
 
-Project about how automation will affect the job field and how job loss, as well as highly increased efficiency will affect society and the economy
+https://leo-kampen.github.io/Computing-in-Society/Homepage.html
